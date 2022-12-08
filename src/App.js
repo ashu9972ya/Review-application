@@ -48,9 +48,14 @@ const App = () => {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log("Review Submitted");
+    console.log(value, review);
     setValue('');
     setReview('');
+  }
+
+  const handleReset=()=>{
+    setValue("");
+    setReview("");
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -78,7 +83,7 @@ const App = () => {
       </div>
       <textarea onChange={e=> setReview(e.target.value)} style={styles.textarea} placeholder='Description' required value={review}></textarea>
       <button  style={styles.button}>Submit</button>
-      <button  style={styles.button}>Reset</button>
+      <button  style={styles.button} onClick={handleReset}>Reset</button>
     </div>
     <div>
     </div>
